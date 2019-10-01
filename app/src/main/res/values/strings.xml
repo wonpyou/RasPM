@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RasPM</string>
+    <string name="Button">항목추가</string>
 </resources>
