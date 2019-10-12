@@ -2,6 +2,7 @@ package com.mobile.raspm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,35 +21,29 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity  {
-
-    //private GoogleMap mMap;
-
-
-    @Override
+public class MainActivity extends AppCompatActivity {
+@Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("리스트뷰 테스트");
 
-        final ArrayList<String> midList = new ArrayList<String>();
+
+        final ArrayList<String> mid = new ArrayList<String>();
+
         ListView list = (ListView) findViewById(R.id.listview1);
 
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, midList);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, mid);
         list.setAdapter(adapter);
 
-        final EditText edtItem = (EditText) findViewById(R.id.edtItem);
         Button btnAdd = (Button) findViewById(R.id.btnAdd);
 
-        btnAdd.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                midList.add(edtItem.getText().toString());
-                adapter.notifyDataSetChanged();
-            }
-        });
 
-        list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
-            public boolean onItemLongClick(AdapterView<?> parent, View view,int position, long id){
-                midList.remove(position);
+        list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                mid.remove(position);
                 adapter.notifyDataSetChanged();
                 return false;
             }
@@ -56,6 +51,8 @@ public class MainActivity extends AppCompatActivity  {
 
     }
 
-
-
+    public void onClick(View view) {
+        Intent intent = new Intent(this, SubActivity.class);
+        startActivity(intent);
+    }
 }
