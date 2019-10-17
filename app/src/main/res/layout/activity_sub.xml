@@ -16,6 +16,37 @@
      android:layout_width="match_parent"
      android:layout_height="wrap_content"/>
 
+ <Button
+    android:id="@+id/main_b_00"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="강서구" />
+ <Button
+     android:id="@+id/main_b_01"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:text="양천구" />
+ <Button
+     android:id="@+id/main_b_02"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:text="강남구" />
+ <Button
+     android:id="@+id/main_b_03"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:text="영등포구" />
+ <Button
+     android:id="@+id/main_b_04"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:text="서초구" />
+ <Button
+     android:id="@+id/main_b_05"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:text="강동구" />
+
  <ListView
      android:id="@+id/listview1"
      android:layout_width="match_parent"
